@@ -46,7 +46,8 @@ class DashboardPage extends StatelessWidget {
       body: Center(
         child: Text(
           "This is Dashboard",
-          style: TextStyle(fontSize: 24),
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+
         ),
       ),
     );
