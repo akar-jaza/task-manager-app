@@ -17,10 +17,8 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
-        appBar: AppBar(title: const Text('Home')),
         body: IndexedStack(
           index: nav.index.value, // keeps each page alive
-
           children: pages,
         ),
         bottomNavigationBar: NavigationBar(
