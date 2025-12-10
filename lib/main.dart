@@ -11,6 +11,6 @@ class TaskManagerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(home: HomeScreen());
+    return GetMaterialApp(home: HomeView());
   }
 }

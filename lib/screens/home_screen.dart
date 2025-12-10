@@ -7,14 +7,14 @@ import 'package:task_manager_app/screens/tasks_screen/add_task_screen.dart';
 import 'package:task_manager_app/screens/tasks_screen/task_detail_screen.dart';
 import 'package:task_manager_app/screens/tasks_screen/tasks_screen.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+class HomeView extends StatelessWidget {
+  HomeView({super.key});
 
   final NavController nav = Get.put(NavController());
   final List<Widget> pages = [
     TasksScreen(),
-    AddTaskScreen(),
-    TaskDetailScreen(),
+    AddTaskView(),
+    TaskDetailsView(),
   ];
 
   @override
