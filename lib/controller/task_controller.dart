@@ -30,5 +30,15 @@ class TaskController extends GetxController {
     final idx = tasks.indexWhere((t) => t.id == updated.id);
     if (idx != -1) tasks[idx] = updated;
     StorageService.saveTasks(tasks);
+    tasks.refresh();
+  }
+
+  void updateTaskStatus(String taskId, String status) {
+    final idx = tasks.indexWhere((t) => t.id == taskId);
+    if (idx != -1) {
+      tasks[idx].status = status;
+      StorageService.saveTasks(tasks);
+      tasks.refresh();
+    }
   }
 }

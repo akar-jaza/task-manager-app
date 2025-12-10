@@ -1,29 +1,27 @@
-import 'package:uuid/uuid.dart';
-
 class Task {
   String id;
   String title;
   String? description;
-  bool completed;
+  String status; // "green", "orange", "blue"
 
   Task({
-    String? id,
     required this.title,
     this.description,
-    this.completed = false,
-  }) : id = id ?? Uuid().v4();
+    String? id,
+    this.status = "green",
+  }) : id = id ?? DateTime.now().millisecondsSinceEpoch.toString();
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'title': title,
-    'description': description,
-    'completed': completed,
-  };
+        'id': id,
+        'title': title,
+        'description': description,
+        'status': status,
+      };
 
   factory Task.fromJson(Map<String, dynamic> json) => Task(
-    id: json['id'],
-    title: json['title'],
-    description: json['description'],
-    completed: json['completed'] ?? false,
-  );
+        id: json['id'],
+        title: json['title'],
+        description: json['description'],
+        status: json['status'] ?? "green",
+      );
 }
