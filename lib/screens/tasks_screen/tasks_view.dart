@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class TasksScreen extends StatefulWidget {
-  const TasksScreen({super.key});
+class TasksView extends StatefulWidget {
+  const TasksView({super.key});
 
   @override
-  State<TasksScreen> createState() => _TasksScreenState();
+  State<TasksView> createState() => _TasksViewState();
 }
 
-class _TasksScreenState extends State<TasksScreen> {
+class _TasksViewState extends State<TasksView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

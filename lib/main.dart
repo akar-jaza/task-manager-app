@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_manager_app/screens/home_screen.dart';
+import 'package:task_manager_app/routes/routes.dart';
 import 'package:get_storage/get_storage.dart';
 
 void main() async {
@@ -14,6 +14,11 @@ class TaskManagerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(home: HomeView());
+    return GetMaterialApp(
+      title: 'Task Manager App',
+      initialRoute: Routes.home_view,
+      getPages: AppPages.pages,
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
