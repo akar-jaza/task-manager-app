@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_manager_app/controller/task_controller.dart';
 import 'package:task_manager_app/routes/routes.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:task_manager_app/services/storage_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await GetStorage.init();
+  await StorageService.init();
+  Get.put(TaskController());
   runApp(const TaskManagerApp());
 }
 
