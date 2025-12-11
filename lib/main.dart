@@ -25,7 +25,7 @@ class TaskManagerApp extends StatelessWidget {
         ),
       ),
       title: 'Task Manager App',
-      initialRoute: Routes.home_view,
+      initialRoute: Routes.homeView,
       getPages: AppPages.pages,
       debugShowCheckedModeBanner: false,
     );
