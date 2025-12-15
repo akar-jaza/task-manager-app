@@ -69,7 +69,7 @@ final lightTheme = ThemeData(
   extensions: <ThemeExtension<dynamic>>[
     const AppColors(
       success: Color(0xFF2E7D32), // green 700
-      successContainer: Color(0xFFE8F5E9), // light green bg
+      successContainer: Color.fromARGB(255, 197, 237, 200), // light green bg
       warning: Color(0xFFEF6C00), // deep orange 600
       warningContainer: Color(0xFFFFF3E0), // light orange bg
     ),
