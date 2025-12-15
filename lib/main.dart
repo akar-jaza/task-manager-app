@@ -3,12 +3,19 @@ import 'package:get/get.dart';
 import 'package:task_manager_app/controller/task_controller.dart';
 import 'package:task_manager_app/routes/routes.dart';
 import 'package:task_manager_app/services/storage_service.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
   await StorageService.init();
+
   Get.put(TaskController());
+
   runApp(const TaskManagerApp());
+
+  FlutterNativeSplash.remove();
 }
 
 class TaskManagerApp extends StatelessWidget {
@@ -17,15 +24,24 @@ class TaskManagerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      themeMode: ThemeMode.system,
+
       theme: ThemeData(
-        // Define the default brightness and colors.
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.blue,
           brightness: Brightness.light,
         ),
       ),
+
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          brightness: Brightness.dark,
+        ),
+      ),
+
       title: 'Task Manager App',
-      initialRoute: Routes.homeView,
+      initialRoute: Routes.splash,
       getPages: AppPages.pages,
       debugShowCheckedModeBanner: false,
     );
